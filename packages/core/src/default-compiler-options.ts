@@ -1,19 +1,4 @@
 /**
- * These are the default globs used to exclude files when using
- * the `parseFromGlob` function.
- *
- * @see {@link https://github.com/sindresorhus/globby | globby}
- */
-export const DEFAULT_GLOBBY_EXCLUDE: string[] = [
-    '!node_modules/**/*.*',
-    '!**/*.test.{ts,js}',
-    '!**/*.spec.{ts,js}',
-    '!**/*.suite.{ts,js}',
-    '!**/*.config.{ts,js}',
-    '!**/*.d.ts',
-];
-
-/**
  * These are the default TypeScript Compiler options used when we're unable
  * to find TSConfig file in the root of the project.
  *
