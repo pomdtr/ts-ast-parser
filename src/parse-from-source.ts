@@ -11,24 +11,27 @@ import { Project } from "./project.ts";
  * @param options - Options to configure the analyzer
  * @returns The reflected TypeScript AST
  */
-export async function parseFromSource(source: string, options: Partial<AnalyserOptions> = {}): Promise<AnalyserResult> {
-    if (!source) {
-        return {
-            project: null,
-            errors: [{ messageText: "Source code is empty." }],
-        };
-    }
+export async function parseFromSource(
+  source: string,
+  options: Partial<AnalyserOptions> = {}
+): Promise<AnalyserResult> {
+  if (!source) {
+    return {
+      project: null,
+      errors: [{ messageText: "Source code is empty." }],
+    };
+  }
 
-    let system: AnalyserSystem;
-    if (options.system) {
-        system = options.system;
-    } else {
-        const m = await import("./system/in-memory-system.js");
-        system = await m.InMemorySystem.create();
-    }
+  let system: AnalyserSystem;
+  if (options.system) {
+    system = options.system;
+  } else {
+    const m = await import("./system/in-memory-system.ts");
+    system = await m.InMemorySystem.create();
+  }
 
-    const project = Project.fromSource(system, source, options);
-    const errors = project.getDiagnostics().getAll();
+  const project = Project.fromSource(system, source, options);
+  const errors = project.getDiagnostics().getAll();
 
-    return { project, errors };
+  return { project, errors };
 }
