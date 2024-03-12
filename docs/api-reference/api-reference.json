@@ -1,8 +1,0 @@
-{
-    "title": "API Reference",
-    "layout": "base",
-    "withHeader": true,
-    "withSideBar": true,
-    "module": "api-reference",
-    "github": "https://github.com/jordimarimon/ts-ast-parser/blob/main"
-}

@@ -1,8 +1,0 @@
-{
-    "private": true,
-    "name": "test-project",
-    "type": "module",
-    "workspaces": [
-        "packages/*"
-    ]
-}

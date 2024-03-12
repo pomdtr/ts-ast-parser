@@ -1,4 +1,0 @@
-{
-    "title": "TypeScript AST Parser",
-    "description": "Reflects a simplified version of the TypeScript AST generated from the TypeScript compiler."
-}
